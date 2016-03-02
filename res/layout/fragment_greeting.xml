@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBackground"
+    tools:context=".GreetingFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signUp"
+            android:id="@+id/textViewSignUp"
+            android:textColor="@color/colorLightBlue"
+            android:textSize="@dimen/textSizeTitle"
+            android:layout_marginBottom="@dimen/marginEditText"
+            android:layout_centerHorizontal="true"/>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:id="@+id/buttonGo"
+            android:layout_below="@id/textViewSignUp"
+            android:src="@drawable/go_button_selector"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/marginGoButton"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_marginBottom="@dimen/marginEditText"
+            android:padding="@dimen/paddingEditText"
+            android:ems="10"
+            android:hint="Email Address"
+            android:textSize="@dimen/textSizeEditText"
+            android:background="@color/colorEditTextBackground"
+            android:textColor="@color/colorEditTextText"
+            android:textColorHint="@color/colorEditTextText"
+            android:id="@+id/editTextEmail"
+            android:layout_below="@id/textViewSignUp"
+            android:layout_alignLeft="@id/buttonGo"
+            android:layout_alignRight="@id/buttonGo"
+            />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="@dimen/marginEditText"
+            android:padding="@dimen/paddingEditText"
+            android:hint="First Name"
+            android:background="@color/colorEditTextBackground"
+            android:textColor="@color/colorEditTextText"
+            android:textColorHint="@color/colorEditTextText"
+            android:ems="10"
+            android:id="@+id/editTextFirstName"
+            android:textSize="@dimen/textSizeEditText"
+            android:layout_below="@id/editTextEmail"
+            android:layout_alignLeft="@id/buttonGo"
+            android:layout_alignRight="@id/buttonGo"/>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:layout_marginBottom="@dimen/marginEditText"
+            android:padding="@dimen/paddingEditText"
+            android:hint="Last Name"
+            android:background="@color/colorEditTextBackground"
+            android:textColor="@color/colorEditTextText"
+            android:textColorHint="@color/colorEditTextText"
+            android:ems="10"
+            android:id="@+id/editTextLastName"
+            android:textSize="@dimen/textSizeEditText"
+            android:layout_below="@id/editTextFirstName"
+            android:layout_alignLeft="@id/buttonGo"
+            android:layout_alignRight="@id/buttonGo"/>
+
+
+    </RelativeLayout>
+
+
+
+</RelativeLayout>

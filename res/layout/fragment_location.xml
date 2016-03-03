@@ -3,9 +3,27 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="fitXY"
+        android:src="@drawable/address_gray_container"
+        android:id="@+id/imageViewAddressContainer"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text=""
+        android:textColor="@color/colorLightBlue"
+        android:textSize="@dimen/textSizeAbout"
+        android:id="@+id/textViewAddress"
+        android:paddingTop="@dimen/addressTextPadding"/>
+
     <com.google.android.gms.maps.MapView android:id="@+id/map"
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        android:layout_height="fill_parent"
+        android:layout_below="@id/imageViewAddressContainer" />
 
 
     <!--fragment

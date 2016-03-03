@@ -1,5 +1,6 @@
 package com.github.zak0.ixonoschallenge;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -7,8 +8,11 @@ import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 
 public class GreetingFragment extends Fragment {
 
@@ -18,7 +22,16 @@ public class GreetingFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_greeting, null);
 
+
+        TextView textViewSignUp = (TextView) root.findViewById(R.id.textViewSignUp);
         final EditText editTextEmail = (EditText) root.findViewById(R.id.editTextEmail);
+        final EditText editTextFirstName = (EditText) root.findViewById(R.id.editTextFirstName);
+        final EditText editTextLastName = (EditText) root.findViewById(R.id.editTextLastName);
+
+        textViewSignUp.setTypeface(MainActivity.TfTungstenRndMedium);
+        editTextEmail.setTypeface(MainActivity.TfProximaNovaRegular);
+        editTextFirstName.setTypeface(MainActivity.TfProximaNovaRegular);
+        editTextLastName.setTypeface(MainActivity.TfProximaNovaRegular);
 
         final ImageButton buttonGo = (ImageButton) root.findViewById(R.id.buttonGo);
         buttonGo.setOnClickListener(new View.OnClickListener() {
@@ -26,7 +39,14 @@ public class GreetingFragment extends Fragment {
             public void onClick(View v) {
                 Log.d(TAG, "entered email is valid: " + validateEmail(editTextEmail.getText().toString()));
 
-                //boolean emailWasValid = validateEmail(editTextEmail.getText().toString());
+                boolean emailWasValid = validateEmail(editTextEmail.getText().toString());
+
+                // Save user if email was valid.
+                if(emailWasValid) {
+                    ((MainActivity) getActivity()).saveUser(new User(editTextEmail.getText().toString(),
+                            editTextFirstName.getText().toString(),
+                            editTextLastName.getText().toString()));
+                }
             }
         });
 

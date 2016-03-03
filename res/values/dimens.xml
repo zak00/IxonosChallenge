@@ -8,4 +8,6 @@
     <dimen name="marginEditText">10dp</dimen>
     <dimen name="marginGoButton">220dp</dimen>
     <dimen name="paddingEditText">16dp</dimen>
+    <dimen name="addressTextPadding">10dp</dimen>
+    <dimen name="topPaddingName">30dp</dimen>
 </resources>

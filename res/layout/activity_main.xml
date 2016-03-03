@@ -23,12 +23,15 @@
             android:layout_marginTop="@dimen/activity_vertical_margin"
             android:layout_marginLeft="@dimen/activity_horizontal_margin"/>
 
-        <ImageView
-            android:layout_width="match_parent"
+        <TextView
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:alpha="0"
-            android:id="@+id/imageViewInvalidEmailBanner"
-            android:src="@drawable/invalid_email_banner_r"/>
+            android:layout_centerHorizontal="true"
+            android:id="@+id/textViewUserName"
+            android:textColor="#ffffff"
+            android:textSize="@dimen/textSizeTitle"
+            android:paddingTop="@dimen/topPaddingName"
+            android:text="Name Placeholder"/>
 
 
         <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"

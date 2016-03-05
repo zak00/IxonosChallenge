@@ -23,7 +23,6 @@ import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapView;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.model.LatLng;
-import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import java.io.IOException;
@@ -53,13 +52,20 @@ public class LocationFragment extends Fragment {
 
         mapView = (MapView) view.findViewById(R.id.map);
         mapView.onCreate(savedInstanceState);
-        mapView.getMapAsync(new OnMapReadyCallback() {
-            @Override
-            public void onMapReady(GoogleMap googleMap) {
-                LatLng testPos = new LatLng(21, 53);
-                googleMap.animateCamera(CameraUpdateFactory.newLatLng(testPos));
-            }
-        });
+
+        // Check for connection and show banner if not.
+        if(!((MainActivity) getActivity()).isInternetAvailable())
+            ((MainActivity) getActivity()).showNoInternetBanner();
+
+        else
+            initMap();
+
+        return view;
+
+    }
+
+    // Inits the map and location related things.
+    private void initMap() {
 
         // Define location listener
         LocationManager locationManager = (LocationManager) getActivity().getSystemService(Context.LOCATION_SERVICE);
@@ -88,6 +94,8 @@ public class LocationFragment extends Fragment {
                             fullAddress += " " + addressList.get(0).getCountryCode();
 
                         } catch (IOException e) {
+                            e.printStackTrace();
+                        } catch (IndexOutOfBoundsException e) {
                             e.printStackTrace();
                         }
 
@@ -125,16 +133,12 @@ public class LocationFragment extends Fragment {
 
         // Check if app has GPS permissions
         if (getContext().getPackageManager().checkPermission(Manifest.permission.ACCESS_FINE_LOCATION, getContext().getPackageName()) == PackageManager.PERMISSION_GRANTED) {
+            // Subscribe for location updates.
             locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
             locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, locationListener);
             //Log.d(TAG, "app has GPS permission");
         }
-
-
-        return view;
-
     }
-
 
     @Override
     public void onResume() {

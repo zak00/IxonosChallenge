@@ -2,12 +2,15 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">12dp</dimen>
     <dimen name="activity_vertical_margin">12dp</dimen>
-    <dimen name="textSizeTitle">24dp</dimen>
+    <dimen name="textSizeTitle">42dp</dimen>
     <dimen name="textSizeEditText">20dp</dimen>
-    <dimen name="textSizeAbout">20dp</dimen>
+    <dimen name="textSizeAbout">26dp</dimen>
     <dimen name="marginEditText">10dp</dimen>
     <dimen name="marginGoButton">220dp</dimen>
     <dimen name="paddingEditText">16dp</dimen>
     <dimen name="addressTextPadding">10dp</dimen>
-    <dimen name="topPaddingName">30dp</dimen>
+    <dimen name="topPaddingName">20dp</dimen>
+    <dimen name="topPaddingMenuItem">15dp</dimen>
+    <dimen name="topPaddingFragmentTitle">80dp</dimen>
+    <dimen name="drawerWidth">240dp</dimen>
 </resources>

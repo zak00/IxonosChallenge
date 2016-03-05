@@ -18,6 +18,7 @@
             android:id="@+id/textViewSignUp"
             android:textColor="@color/colorLightBlue"
             android:textSize="@dimen/textSizeTitle"
+            android:layout_marginTop="@dimen/topPaddingFragmentTitle"
             android:layout_marginBottom="@dimen/marginEditText"
             android:layout_centerHorizontal="true"/>
 

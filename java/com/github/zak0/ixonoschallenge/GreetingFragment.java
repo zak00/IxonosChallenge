@@ -8,7 +8,6 @@ import android.util.Patterns;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.WindowManager;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -43,10 +42,15 @@ public class GreetingFragment extends Fragment {
 
                 // Save user if email was valid.
                 if(emailWasValid) {
+                    InputMethodManager imm = (InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+
                     ((MainActivity) getActivity()).saveUser(new User(editTextEmail.getText().toString(),
                             editTextFirstName.getText().toString(),
                             editTextLastName.getText().toString()));
                 }
+                else
+                    ((MainActivity) getActivity()).showInvalidEmailBanner();
             }
         });
 

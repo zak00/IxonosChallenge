@@ -5,7 +5,10 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="colorBackground">#012639</color>
+    <color name="colorDrawerBackground">#081A24</color>
+    <color name="colorDrawerItem">#898989</color>
     <color name="colorLightBlue">#76C4D5</color>
+    <color name="colorLightBlueMenu">#93CDC3</color>
     <color name="colorEditTextBackground">#445C62</color>
     <color name="colorEditTextText">#FFFFFF</color>
 

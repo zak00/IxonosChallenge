@@ -33,6 +33,19 @@
             android:paddingTop="@dimen/topPaddingName"
             android:text="Name Placeholder"/>
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/invalid_email_banner_r"
+            android:id="@+id/imageViewInvalidEmailBanner"
+            android:alpha="0"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/no_internet_connection_banner_r"
+            android:id="@+id/imageViewNoInternetBanner"
+            android:alpha="0"/>
 
         <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -49,13 +62,58 @@
 
 
     <!-- Navigation drawer ListView -->
-    <ListView
-        android:id="@+id/naviDrawer"
-        android:layout_width="240dp"
+    
+    <RelativeLayout
+        android:layout_width="@dimen/drawerWidth"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:choiceMode="singleChoice"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="0dp"
-        android:background="@android:color/background_light" />
+        android:background="@color/colorDrawerBackground" >
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/menu_back_icon"
+                android:id="@+id/imageViewMenuBackIcon"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="40dp"
+                android:paddingTop="10dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/textSizeTitle"
+                android:textColor="@color/colorLightBlueMenu"
+                android:id="@+id/textViewCloseMenu"
+                android:text="@string/menu"
+                android:layout_toRightOf="@id/imageViewMenuBackIcon"
+                />
+
+            <ListView
+                android:id="@+id/naviDrawerList"
+                android:layout_width="240dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:choiceMode="singleChoice"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="0dp"
+                android:layout_below="@id/textViewCloseMenu"
+                android:layout_alignLeft="@id/textViewCloseMenu"/>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:src="@drawable/ixonos_logo_small"
+            android:layout_margin="20dp"/>
+    </RelativeLayout>
+    
+
 </android.support.v4.widget.DrawerLayout>
